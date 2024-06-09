@@ -1,11 +1,23 @@
 part of 'home_bloc.dart';
 
 @immutable
-sealed class HomeEvent {}
+abstract class HomeEvent {}
 
-class HomeFavClickedEvent extends HomeEvent {}
+class HomeInitialEvent extends HomeEvent {}
 
-class HomeCartClickedEvent extends HomeEvent {}
+class HomeFavClickedEvent extends HomeEvent {
+  final ProductDataModel clickedProduct;
+  HomeFavClickedEvent({
+    required this.clickedProduct,
+  });
+}
+
+class HomeCartClickedEvent extends HomeEvent {
+  final ProductDataModel clickedProduct;
+  HomeCartClickedEvent({
+    required this.clickedProduct,
+  });
+}
 
 class HomeFavlistNavigateEvent extends HomeEvent {}
 

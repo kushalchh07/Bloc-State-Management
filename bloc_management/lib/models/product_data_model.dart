@@ -3,11 +3,12 @@ class ProductDataModel {
   final String title;
   final String description;
   final String imageUrl;
-  final String price;
-  ProductDataModel(
-      {required this.description,
-      required this.id,
-      required this.title,
-      required this.imageUrl,
-      required this.price});
+  final double price;
+  ProductDataModel({
+    required this.id,
+    required this.description,
+    required this.title,
+    required this.imageUrl,
+    required this.price,
+  });
 }
