@@ -23,6 +23,7 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
         Uri.parse('https://jsonplaceholder.typicode.com/posts'),
         // body: {'name': 'doodle', 'color': 'blue'}
       );
+      
       List result = jsonDecode(response.body);
       for (int i = 0; i < result.length; i++) {
         PostsUiDataModel post =
