@@ -52,28 +52,30 @@ class _PostsPageState extends State<PostsPage> {
                   title: Text("Posts"),
                 ),
                 body: Container(
-                  child: ListView.builder(itemBuilder: (context, index) {
-                    return Container(
-                      color: Colors.grey.shade300,
-                      margin: const EdgeInsets.all(10),
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(successState.posts[index].userId.toString()),
-                          Text(successState.posts[index].id.toString()),
-                          Text(
-                            successState.posts[index].title,
-                            style: TextStyle(fontSize: 20),
+                  child: ListView.builder(
+                      itemCount: successState.posts.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          color: Colors.grey.shade300,
+                          margin: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(successState.posts[index].userId.toString()),
+                              Text(successState.posts[index].id.toString()),
+                              Text(
+                                successState.posts[index].title,
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              Text(
+                                successState.posts[index].body,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
                           ),
-                          Text(
-                            successState.posts[index].body,
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ],
-                      ),
-                    );
-                  }),
+                        );
+                      }),
                 ),
               );
             case PostsLoadingState:
